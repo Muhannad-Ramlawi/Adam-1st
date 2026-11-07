@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boss Party 👑 You're Invited | 1st Birthday</title>
+  <meta name="description" content="You're invited to the Boss Party! Our little boss turns one. Friday 18 December 2026, 1:00 PM." />
+  <meta name="theme-color" content="#060d22" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;800&family=Josefin+Sans:wght@200;300;400;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="locked">
+
+  <!-- ===== TAP TO OPEN (briefcase) ===== -->
+  <div class="gate" id="gate">
+    <button class="lang-btn gate-lang" data-lang-toggle aria-label="Language"><span data-i18n="lang_btn">عربي</span></button>
+
+    <div class="gate-inner">
+      <div class="case" id="case" aria-hidden="true">
+        <div class="case-card"><b>1</b><span>BOSS PARTY</span></div>
+        <div class="case-base">
+          <i class="case-line"></i><i class="case-lock"></i>
+          <em>BABY CORP.</em>
+        </div>
+        <div class="case-lid"><i class="case-handle"></i></div>
+        <div class="case-glow"></div>
+      </div>
+
+      <p class="gate-kicker" data-i18n="gate_kicker">Top secret · for invited guests only</p>
+      <h1 class="gate-title" data-i18n-html="gate_title">A very <em>important</em> meeting awaits</h1>
+      <button class="tap" id="openBtn"><span data-i18n="tap">Tap to open</span><i>👆</i></button>
+    </div>
+  </div>
+
+  <canvas id="confetti"></canvas>
+  <div class="floaters" id="floaters" aria-hidden="true"></div>
+
+  <!-- Fixed controls -->
+  <div class="controls" id="controls">
+    <button class="ctl" data-lang-toggle aria-label="Language"><span data-i18n="lang_btn">عربي</span></button>
+    <button class="ctl" id="muteBtn" aria-label="Music on/off">🔇</button>
+  </div>
+
+  <main>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="top">
+      <p class="kicker reveal" data-i18n="hero_kicker">You're invited to the</p>
+
+      <div class="arch-wrap reveal" id="archWrap">
+        <div class="arch">
+          <span class="spark sp1">✦</span><span class="spark sp2">✦</span><span class="spark sp3">✧</span>
+        </div>
+        <img class="baby-pop" id="babyPop" src="assets/baby-boss.png" alt="Our little boss in a gold crown, tie and suspenders" />
+        <div class="ledge"><span class="one">1</span></div>
+      </div>
+
+      <h1 class="title reveal" data-i18n="hero_title">BOSS PARTY!</h1>
+      <p class="sub reveal" data-i18n="hero_sub">Our little boss turns ONE</p>
+      <p class="name reveal" id="heroName"></p>
+
+      <div class="when reveal">
+        <span id="heroDate"></span>
+        <i>◆</i>
+        <span id="heroTime"></span>
+      </div>
+
+      <a href="#countdown" class="scroll"><span data-i18n="scroll">Scroll</span><b>⌄</b></a>
+    </section>
+
+    <!-- ===== COUNTDOWN ===== -->
+    <section class="sec" id="countdown">
+      <div class="orn reveal"><i></i><span>◆</span><i></i></div>
+      <h2 class="h2 reveal" data-i18n="cd_title">Until the Boss Party</h2>
+
+      <div class="dials reveal" id="dials">
+        <div class="dial"><svg viewBox="0 0 100 100"><circle class="track" cx="50" cy="50" r="44"/><circle class="arc" id="arcD" cx="50" cy="50" r="44"/></svg><span id="d">--</span><small data-i18n="u_days">Days</small></div>
+        <div class="dial"><svg viewBox="0 0 100 100"><circle class="track" cx="50" cy="50" r="44"/><circle class="arc" id="arcH" cx="50" cy="50" r="44"/></svg><span id="h">--</span><small data-i18n="u_hours">Hours</small></div>
+        <div class="dial"><svg viewBox="0 0 100 100"><circle class="track" cx="50" cy="50" r="44"/><circle class="arc" id="arcM" cx="50" cy="50" r="44"/></svg><span id="m">--</span><small data-i18n="u_min">Minutes</small></div>
+        <div class="dial"><svg viewBox="0 0 100 100"><circle class="track" cx="50" cy="50" r="44"/><circle class="arc" id="arcS" cx="50" cy="50" r="44"/></svg><span id="s">--</span><small data-i18n="u_sec">Seconds</small></div>
+      </div>
+      <p class="live" id="live" hidden data-i18n="cd_live">The meeting is in session! 🎉</p>
+    </section>
+
+    <!-- ===== MESSAGE ===== -->
+    <section class="sec">
+      <div class="quote reveal">
+        <div class="q-crown">👑</div>
+        <p class="q-body" data-i18n="msg_body">One year ago, the most important boss in our lives joined the family. He runs the house, the schedule and every heart in it. Come celebrate his first year with cake, laughter and one very serious meeting.</p>
+        <p class="q-sign" data-i18n="msg_sign">— Mom &amp; Dad</p>
+      </div>
+    </section>
+
+    <!-- ===== MOMENTS (looping strip) ===== -->
+    <section class="sec wide" id="moments">
+      <div class="orn reveal"><i></i><span>◆</span><i></i></div>
+      <h2 class="h2 reveal" data-i18n="mo_title">The Boss's First Year</h2>
+      <p class="lead reveal" data-i18n="mo_sub">Sharing his first memories with you</p>
+      <div class="marquee reveal"><div class="track" id="track"></div></div>
+    </section>
+
+    <!-- ===== DETAILS ===== -->
+    <section class="sec" id="details">
+      <div class="orn reveal"><i></i><span>◆</span><i></i></div>
+      <h2 class="h2 reveal" data-i18n="dt_title">Meeting Details</h2>
+
+      <div class="card reveal">
+        <div class="row"><b>📅</b><div><small data-i18n="dt_date">Date</small><p id="dDate"></p></div></div>
+        <div class="row"><b>⏰</b><div><small data-i18n="dt_time">Time</small><p id="dTime"></p></div></div>
+        <div class="row"><b>📍</b><div><small data-i18n="dt_venue">Venue</small><p id="dPlace"></p></div></div>
+        <div class="row"><b>👔</b><div><small data-i18n="dt_attire">Attire</small><p data-i18n="dt_attire_v">Boss attire: black, white &amp; gold</p></div></div>
+
+        <div class="map">
+          <iframe id="mapFrame" title="Map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+
+        <div class="actions">
+          <a class="btn gold" id="mapBtn" href="#" target="_blank" rel="noopener">📍 <span data-i18n="btn_maps">Open in Maps</span></a>
+          <button class="btn ghost" id="calBtn">📅 <span data-i18n="btn_cal">Add to Calendar</span></button>
+          <a class="btn ghost" id="rsvpBtn" href="#" target="_blank" rel="noopener" hidden>💬 <span data-i18n="btn_rsvp">RSVP on WhatsApp</span></a>
+        </div>
+        <p class="note" data-i18n="dt_note">Attendance is mandatory. Cake is non-negotiable. 🎂</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="logo">👑 BABY CORP.</div>
+    <p data-i18n="foot">Made with love by Mom &amp; Dad</p>
+  </footer>
+
+  <audio id="song" loop preload="auto"></audio>
+  <script src="script.js"></script>
+</body>
+</html>
