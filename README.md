@@ -10,7 +10,7 @@ A tap-to-open, bilingual (English / عربي) first-birthday invitation in a Bos
 3. **Countdown** with animated progress rings (live to 18 Dec 2026, 1:00 PM)
 4. A short **note from Mom & Dad**
 5. A looping **photo strip** (tap a photo to enlarge)
-6. **Meeting details**: date, time, venue, attire, an embedded **Google Map**, **Open in Maps**, **Add to Calendar** (.ics) and optional **RSVP on WhatsApp**
+6. **Meeting details**: date, time, venue, an embedded **Google Map**, **Open in Maps**, **Add to Calendar** (.ics) and optional **RSVP on WhatsApp**
 7. **English ⇄ عربي** switch (full right-to-left layout and Arabic numerals) and a **music mute** button
 
 ## Customize (everything is at the top of `script.js`)
@@ -20,7 +20,7 @@ const INVITE = {
   mapsLink: "https://maps.app.goo.gl/...",
   mapQuery: "Triumph Luxury Hotel New Cairo",   // what the embedded map shows
   whatsapp: "201001234567",                     // country code, no "+"; leave "" to hide the RSVP button
-  babyName: { en: "Our Little Boss", ar: "زعيمنا الصغير" },
+  babyName: { en: "Adam", ar: "آدم" },
   moments: ["assets/moments/full.jpg", ...],    // add your own photos here
 };
 ```
